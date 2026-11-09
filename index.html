@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi catálogo de videojuegos</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #20242c;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #62d9a5;
+        }
+
+        .contenedor {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .contenido {
+            width: 100%;
+        }
+
+        #buscar {
+            width: 60%;
+            padding: 12px;
+            margin-top: 15px;
+            border: 2px solid #62d9a5;
+            border-radius: 8px;
+            background-color: #303640;
+            color: white;
+            font-size: 16px;
+        }
+
+        #buscar::placeholder {
+            color: #cccccc;
+        }
+
+        table {
+            width: 100%;
+            margin: 25px auto;
+            border-collapse: collapse;
+            background-color: rgba(48, 54, 64, 0.90);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #62d9a5;
+        }
+
+        th {
+            background-color: rgba(22, 123, 89, 0.95);
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(60, 69, 82, 0.90);
+        }
+
+        #mensaje {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 800px) {
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 6px;
+            }
+
+            #buscar {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Mi catálogo de videojuegos</h1>
+    <p>Videojuegos registrados en Supabase</p>
+
+    <div class="contenedor">
+
+        <div class="contenido">
+
+            <input type="text" id="buscar" placeholder="Buscar por nombre o título...">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Plataforma</th>
+                        <th>Género</th>
+                        <th>Año</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaVideojuegos"></tbody>
+            </table>
+
+            <p id="mensaje">Cargando videojuegos...</p>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
